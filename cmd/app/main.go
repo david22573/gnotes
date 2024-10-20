@@ -1,13 +1,10 @@
 package main
 
 import (
-	"fmt"
-
-	"github.com/david22573/gnotes/internal/router"
+	"github.com/david22573/gnotes/internal/server"
 )
 
 func main() {
-	fmt.Println("Hi")
-	r := router.NewRouter()
-	r.Logger.Fatal(r.Start(":1323"))
+	s := server.Init()
+	s.Logger.Fatal(s.Start(":1323"))
 }
