@@ -20,9 +20,6 @@ func CreateUser(c echo.Context) error {
 	if err := c.Bind(&req); err != nil {
 		return echo.NewHTTPError(http.StatusBadRequest, "Invalid request body")
 	}
-	if err := c.Validate(&req); err != nil {
-		return echo.NewHTTPError(http.StatusBadRequest, "Validation failed: "+err.Error())
-	}
 
 	// Create the user object with hashed password.
 	newUser := types.User{
@@ -30,6 +27,10 @@ func CreateUser(c echo.Context) error {
 		Name:      req.Name,
 		Password:  hashPassword(req.Password), // Hashing the password for security.
 		CreatedAt: time.Now(),
+	}
+
+	if err := newUser.Validate(); err != nil {
+		return echo.NewHTTPError(http.StatusBadRequest, "Validation failed: "+err.Error())
 	}
 
 	// Store the user in memory.

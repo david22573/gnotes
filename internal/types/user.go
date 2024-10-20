@@ -7,7 +7,10 @@ import (
 )
 
 // Constants and errors.
-var ErrNameEmpty = errors.New("name cannot be empty")
+var (
+	ErrNameEmpty     = errors.New("name cannot be empty")
+	ErrPasswordEmpty = errors.New("password cannot be empty")
+)
 
 // User struct (contains the password, but excluded from the JSON response).
 type User struct {
@@ -21,6 +24,8 @@ type User struct {
 func (u *User) Validate() error {
 	if u.Name == "" {
 		return fmt.Errorf("validation failed: %w", ErrNameEmpty)
+	} else if u.Password == "" {
+		return fmt.Errorf("validation failed: %w", ErrPasswordEmpty)
 	}
 	return nil
 }
