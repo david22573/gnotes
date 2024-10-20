@@ -1,2 +1,2 @@
 # gnotes
-A Notes App using Go.
+A Notes App using Go and Svelte. 
