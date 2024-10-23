@@ -70,3 +70,9 @@ func (u *User) ToResponse() UserResponse {
 		CreatedAt: u.CreatedAt,
 	}
 }
+
+type UpdateUserRequest struct {
+	Name     string `json:"name,omitempty" validate:"omitempty,min=3,max=50,username"`
+	Email    string `json:"email,omitempty" validate:"omitempty,email"`
+	Password string `json:"password,omitempty" validate:"omitempty,min=8,containsany=!@#$%^&*"`
+}

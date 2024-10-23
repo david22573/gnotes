@@ -1,18 +1,22 @@
 package routes
 
 import (
-	"github.com/david22573/gnotes/internal/server/handlers"
+	"github.com/david22573/gnotes/internal/handlers"
+	"github.com/david22573/gnotes/internal/store"
 	"github.com/labstack/echo/v4"
 )
 
-func RegisterAPIRoutes(e *echo.Echo) {
-	api := e.Group("/api")
-	v1 := api.Group("/v1")
-	registerUserRoutes(v1)
-}
+func RegisterAPIRoutes(e *echo.Echo, db *store.DBStore) {
+	// Create handlers
+	userHandler := handlers.NewUserHandler(db)
 
-func registerUserRoutes(v1 *echo.Group) {
-	h := handlers.NewUserHandler(handlers.NewInMemoryUserStore())
-	v1.GET("/users/:name", h.GetUser)
-	v1.POST("/users", h.CreateUser)
+	// API routes
+	api := e.Group("/api")
+
+	// Users routes
+	users := api.Group("/users")
+	users.POST("", userHandler.CreateUser)
+	users.GET("/:id", userHandler.GetUser)
+	users.PUT("/:id", userHandler.UpdateUser)
+	users.DELETE("/:id", userHandler.DeleteUser)
 }
