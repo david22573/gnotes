@@ -26,29 +26,34 @@ func NewMongoStore(uri string) (*MongoStore, error) {
 	}, nil
 }
 
-func (s *MongoStore) Get(key string) (string, error) {
+func (s *MongoStore) Get(key string) (*types.User, error) {
 	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
 	defer cancel()
 
-	collection := s.client.Database("gnotes").Collection("users")
+	collection := s.client.Database("gnotes").Collection("user")
 	filter := bson.M{"_id": key}
 
 	var user types.User
 	err := collection.FindOne(ctx, filter).Decode(&user)
 	if err != nil {
-		return "", fmt.Errorf("failed to find user: %w", err)
+		return &types.User{}, fmt.Errorf("failed to find user: %w", err)
 	}
 
-	return user.Password, nil
+	return &user, nil
 }
 
-func (s *MongoStore) Set(key, value string) error {
+func (s *MongoStore) Set(key, user *types.User) error {
 	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
 	defer cancel()
 
-	collection := s.client.Database("gnotes").Collection("users")
+	collection := s.client.Database("gnotes").Collection("user")
 	filter := bson.M{"_id": key}
-	update := bson.M{"$set": bson.M{"password": value}}
+
+	update := bson.M{"$set": bson.M{
+		"name":     user.Name,
+		"email":    user.Email,
+		"password": user.Password,
+	}}
 
 	_, err := collection.UpdateOne(ctx, filter, update)
 	if err != nil {
