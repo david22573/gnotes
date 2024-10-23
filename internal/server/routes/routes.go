@@ -12,5 +12,6 @@ func RegisterAPIRoutes(e *echo.Echo) {
 }
 
 func registerUserRoutes(v1 *echo.Group) {
-	v1.POST("/users", handlers.CreateUser)
+	h := handlers.NewUserHandler(handlers.NewInMemoryUserStore())
+	v1.POST("/users", h.CreateUser)
 }
