@@ -13,5 +13,6 @@ func RegisterAPIRoutes(e *echo.Echo) {
 
 func registerUserRoutes(v1 *echo.Group) {
 	h := handlers.NewUserHandler(handlers.NewInMemoryUserStore())
+	v1.GET("/users/:name", h.GetUser)
 	v1.POST("/users", h.CreateUser)
 }

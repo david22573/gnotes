@@ -12,34 +12,21 @@ import (
 	"golang.org/x/crypto/bcrypt"
 )
 
-// UserStore defines the interface for user storage operations
 type UserStore interface {
 	Create(user types.User) error
 	FindByName(name string) (*types.User, error)
 }
 
-// UserHandler handles HTTP requests related to users
 type UserHandler struct {
 	store UserStore
 }
 
-// NewUserHandler creates a new UserHandler instance
 func NewUserHandler(store UserStore) *UserHandler {
 	return &UserHandler{
 		store: store,
 	}
 }
 
-// CreateUser handles the creation of new users
-// @Summary Create a new user
-// @Description Creates a new user with the provided details
-// @Tags users
-// @Accept json
-// @Produce json
-// @Param request body types.CreateUserRequest true "User creation request"
-// @Success 201 {object} types.UserResponse
-// @Failure 400 {object} echo.HTTPError
-// @Failure 409 {object} echo.HTTPError
 // @Router /users [post]
 func (h *UserHandler) CreateUser(c echo.Context) error {
 	var req types.CreateUserRequest
@@ -51,7 +38,7 @@ func (h *UserHandler) CreateUser(c echo.Context) error {
 
 	// Validate the request struct
 	if err := c.Validate(&req); err != nil {
-		return err // Our custom validator already returns proper HTTP errors
+		return err
 	}
 
 	// Check if user already exists
@@ -74,6 +61,7 @@ func (h *UserHandler) CreateUser(c echo.Context) error {
 		ID:        generateUUID(),
 		Name:      req.Name,
 		Password:  hashedPassword,
+		Email:     req.Email,
 		CreatedAt: time.Now().UTC(),
 	}
 
@@ -84,16 +72,19 @@ func (h *UserHandler) CreateUser(c echo.Context) error {
 	return c.JSON(http.StatusCreated, newUser.ToResponse())
 }
 
-// validateCreateUserRequest validates the user creation request
-func validateCreateUserRequest(req types.CreateUserRequest) error {
-	if len(req.Name) < 3 {
-		return errors.New("username must be at least 3 characters long")
+func (h *UserHandler) GetUser(c echo.Context) error {
+	userName := c.Param("name")
+
+	user, err := h.store.FindByName(userName)
+	if err != nil {
+		return echo.NewHTTPError(http.StatusInternalServerError, "Error finding user")
 	}
-	if len(req.Password) < 8 {
-		return errors.New("password must be at least 8 characters long")
+
+	if user == nil {
+		return echo.NewHTTPError(http.StatusNotFound, "User not found")
 	}
-	// Add more validation rules as needed
-	return nil
+
+	return c.JSON(http.StatusOK, user.ToResponse())
 }
 
 // hashPassword securely hashes the password using bcrypt
