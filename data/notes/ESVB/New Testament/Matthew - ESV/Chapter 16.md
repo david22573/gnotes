@@ -1,0 +1,16 @@
+# Chapter 16
+## The Pharisees and Sadduccees Demand Signs
+**Verses 1-4**
+And the Pharisees and Sadducees came, and to test him they asked him to show them a sign from heaven. He answered them, "When it is evening, you say, 'It will be fair weather, for the sky is red.' And in the morning, 'It will be stormy today, for the sky is red and threatening.' You know how to interpret the appearance of the sky, but you cannot interpret the signs of the times. An evil and adulterous generation seeks for a sign, but no sign will be given to it except the sign of Jonah." So he them and departed.
+
+## The Leaven of the Pharisees and Sadducees
+**Verses 5-12**
+When the disciples reached the other side, they had forgotten to bring any bread. Jesus said to them, "Watch and beware of the leaven of the Pharisees and Sadducees." And they began discussing it among themselves, saying, "We brought no bread." But Jesus, aware of this, said, "O you of little faith, why are you discussing among yourselves the fact that you have no bread? Do you not yet perceive? Do you not remember the five loaves for the five thousand, and how many baskets you gathered? Or the seven loaves for the four thousand, and how many baskets you gathered? How is it that you fail to understand that I did not speak about bread? Beware of the leaven of the Pharisees and Sadducees." Then they understood that he did not tell them to beware of the leaven of bread, but of the teaching of the Pharisees and Sadducees.
+
+## Peter Confesses Jesus as the Christ
+**Verses 13-20**
+Now when Jesus came into the district of Caesarea Phillipi, he asked his disciples, "Who do people say that the Son of Man is?" And they said, "Some say John the Baptist, others say Elijah, and others Jeremiah or one of the prophets." He said to them, "But who do you say that I am?" Simon Peter replied, "You are the Christ, the Son of the Living God." And Jesus answered him, "Blessed are you, Simon Bar-Jonah! For flesh and blood has not yet revealed this to you, but my Father who is in heaven. And I tell you, you are Peter, and on this rock I will build my church, and the gates of hell shall not prevail against it. I will give you the keys of the kingdom of heaven, and whatever you bind on earth shall be bound in heaven, and whatever you loose on earth shall be loosed in heaven." Then he strictly charged the disciples to tell no one that he was the Christ;
+
+## Jesus Foretells His Death and Resurrection
+**Verses 21-23**
+Then Jesus told his disciples, "If anyone would come after me, let him deny himself and take up his cross and follow me. For whoever would save his life will lose it, but whoever loses his life for my sake will find it. For what will it profit a man if he gains the whole world and forfeits his soul? Or what shall a man give in return for his soul? For the Son of Man is going to come with his angels in the glory of his Father, and then he will repay each person according to what he has done. Truly, I say to you, there are some standing here who will not taste death until they see the Son of Man coming in his kingdom."
