@@ -2,7 +2,7 @@ package server
 
 import (
 	"github.com/david22573/gnotes/internal/server/routes"
-	"github.com/david22573/gnotes/internal/store"
+	"github.com/david22573/gnotes/internal/store/db"
 	"github.com/david22573/gnotes/internal/validators"
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo/v4/middleware"
@@ -10,12 +10,12 @@ import (
 
 type Server struct {
 	echo  *echo.Echo
-	store *store.DBStore
+	store *db.DBStore
 }
 
 func New(dbPath string) *Server {
 	// Initialize the store
-	db := store.NewDBStore(dbPath)
+	db := db.NewDBStore(dbPath)
 
 	// Create new echo instance
 	e := echo.New()

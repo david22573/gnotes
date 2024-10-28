@@ -2,11 +2,11 @@ package routes
 
 import (
 	"github.com/david22573/gnotes/internal/handlers"
-	"github.com/david22573/gnotes/internal/store"
+	"github.com/david22573/gnotes/internal/store/db"
 	"github.com/labstack/echo/v4"
 )
 
-func RegisterAPIRoutes(e *echo.Echo, db *store.DBStore) {
+func RegisterAPIRoutes(e *echo.Echo, db *db.DBStore) {
 	// Create handlers
 	userHandler := handlers.NewUserHandler(db)
 

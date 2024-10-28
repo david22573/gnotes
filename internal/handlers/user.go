@@ -6,17 +6,17 @@ import (
 	"net/http"
 	"strconv"
 
-	"github.com/david22573/gnotes/internal/store"
+	"github.com/david22573/gnotes/internal/store/db"
 	"github.com/david22573/gnotes/internal/types"
 	"github.com/labstack/echo/v4"
 	"golang.org/x/crypto/bcrypt"
 )
 
 type UserHandler struct {
-	store *store.DBStore
+	store *db.DBStore
 }
 
-func NewUserHandler(store *store.DBStore) *UserHandler {
+func NewUserHandler(store *db.DBStore) *UserHandler {
 	return &UserHandler{
 		store: store,
 	}

@@ -1,4 +1,4 @@
-package store
+package db
 
 import (
 	"strconv"
@@ -9,12 +9,6 @@ import (
 )
 
 // UserModel represents the database model
-type User struct {
-	gorm.Model // This already includes ID uint, CreatedAt, UpdatedAt, and DeletedAt
-	Name       string
-	Email      string `gorm:"uniqueIndex"`
-	Password   string
-}
 
 // ToUser converts UserModel to types.User
 func (m *User) ToUser() *types.User {
