@@ -1,0 +1,58 @@
+Chapter 5
+
+# Chapter 5
+
+**1:** "If anyone sins that he hears a public adjuration to testify, and though he is a witness, whether he has seen or come to know the matter, yet does not speak, he shall bear his iniquity;
+**2:** or if anyone touches an unclean thing, whether a carcass of an unclean wild animal or a carcass of unclean livestock or a carcass of unclean swarming things, and it is hidden from him and he has become unclean, and he realizes his guilt;
+**3:** of if he touches human uncleanness, of whatever sort the uncleanness may be with which one becomes unclean, and it is hidden from him, when he comes to know it, and realizes his guilt;
+**4:** or if anyone utters with his lips a rash oath to do evil or to do good, any sort of rash oath that people swear, and it is hidden from him, when he comes to know it, and he realizes his guilt in any of these;
+**5:** when he realizes his guilt in any of these and confesses the sin he has committed,
+**6:** he shall bring to the LORD as his compensation for the sin that he has committed, a female from the flock, a lamb or a goat, for a sin offering. And the priest shall make atonement for him for his sin.
+
+**7:** "But if he cannot afford a lamb, then he shall bring to the LORD as his compensation for the sin that he has committed two turtledoves or two pigeons, one for a sin offering and the other for a burnt offering.
+**8:** He shall bring them to the priest, who shall offer the first one for the sin offering. He shall wring its head from its neck but shall not sever it completely,
+**9:** and he shall sprinkle some of the blood of the sin offering on the side of the altar, while the rest of the blood shall be drained out at the base of the altar; it is a sin offering.
+**10:** Then he shall offer the second for a burnt offering according to the rule. And the priest shall make atonement for him for the sin that he has committed, and he shall be forgiven.
+
+**11:** "But if he cannot afford two turtledoves or two pigeons, then he shall bring as his offering for the sin that he has committed a tenth of an ephah of fine flour for a sin offering. He shall put no oil on it and shall put no frankincense on it, for it is a sin offering.
+**12:** And he shall bring it to the priest, and the priest shall take a handful of it as its memorial portion and burn this on the altar, on the LORD's food offerings; it is a sin offering.
+**13:** Thus the priest shall make atonement for him for the sin which he has committed in any one of these things, and he shall be forgiven. And the remainder shall be for the priest, as in the grain offering.""
+
+**14:** The LORD spoke to Moses, saying,
+**15:** "If anyone commits a breach of faith and sins unintentionally in any of the holy things of the LORD, he shall bring to the LORD as his compensation, a ram without blemish out of the flock, valued in silver shekels, according to the shekel of the sanctuary, for a guilt offering.
+**16:** He shall also make restitution for what he has done amiss in the holy thing and shall add a fifth to it and give it to the priest. And the priest shall make atonement for him with the ram of the guilt offering, and he shall be forgiven.
+
+**17:** "If anyone sins, doing any of the things that by the LORD's commandments ought not to be done, though he did not know it, then realizes his guilt, he shall bear his iniquity.
+**18:** He shall bring to the priest a ram without blemish out of the flock, or its equivalent, for a guilt offering, and the priest shall make atonement for him for the mistake that he made unintentionally, and he shall be forgiven.
+**19:** It is a guilt offering, he has indeed incurred guilt before the LORD."
+
+
+id: 86cac64ef1004c6db66bcbbbf1ad9b6c
+parent_id: 2b4e8a288ffd42deba3525964f24333a
+created_time: 2024-03-01T00:12:46.089Z
+updated_time: 2024-03-01T00:12:51.647Z
+is_conflict: 0
+latitude: 32.51494690
+longitude: -117.03824710
+altitude: 0.0000
+author: 
+source_url: 
+is_todo: 0
+todo_due: 0
+todo_completed: 0
+source: joplin-desktop
+source_application: net.cozic.joplin-desktop
+application_data: 
+order: 0
+user_created_time: 2024-03-01T00:12:46.089Z
+user_updated_time: 2024-03-01T00:12:51.647Z
+encryption_cipher_text: 
+encryption_applied: 0
+markup_language: 1
+is_shared: 0
+share_id: 
+conflict_original_id: 
+master_key_id: 
+user_data: 
+deleted_time: 0
+type_: 1
