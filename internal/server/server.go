@@ -1,6 +1,10 @@
 package server
 
 import (
+	"html/template"
+	"io"
+	"net/http"
+
 	"github.com/david22573/gnotes/internal/server/routes"
 	"github.com/david22573/gnotes/internal/store/db"
 	"github.com/david22573/gnotes/internal/validators"
@@ -13,12 +17,31 @@ type Server struct {
 	store *db.DBStore
 }
 
+type Template struct {
+	templates *template.Template
+}
+
+func (t *Template) Render(w io.Writer, name string, data interface{}, c echo.Context) error {
+	return t.templates.ExecuteTemplate(w, name, data)
+}
+
+var t = &Template{
+	templates: template.Must(template.ParseGlob("public/views/**/*.html")),
+}
+
+func Hello(c echo.Context) error {
+	return c.Render(http.StatusOK, "hello.html", "World")
+}
+
 func New(dbPath string) *Server {
 	// Initialize the store
 	db := db.NewDBStore(dbPath)
 
 	// Create new echo instance
 	e := echo.New()
+
+	e.Renderer = t
+	e.GET("/hello", Hello)
 
 	// Initialize server
 	server := &Server{

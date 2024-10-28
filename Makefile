@@ -1,5 +1,5 @@
 build:
-	@go build -o bin/app_prod cmd/app/main.go
+	@go build -o bin/gnotes cmd/gnotes/main.go
 
 run:
-	@bin/app_prod
+	@bin/gnotes
