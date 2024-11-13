@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/david22573/gnotes/internal/types"
+	"github.com/david22573/gnotes/internal/store/db"
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
@@ -26,23 +26,23 @@ func NewMongoStore(uri string) (*MongoStore, error) {
 	}, nil
 }
 
-func (s *MongoStore) Get(key string) (*types.User, error) {
+func (s *MongoStore) Get(key string) (*db.User, error) {
 	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
 	defer cancel()
 
 	collection := s.client.Database("gnotes").Collection("user")
 	filter := bson.M{"_id": key}
 
-	var user types.User
+	var user db.User
 	err := collection.FindOne(ctx, filter).Decode(&user)
 	if err != nil {
-		return &types.User{}, fmt.Errorf("failed to find user: %w", err)
+		return &db.User{}, fmt.Errorf("failed to find user: %w", err)
 	}
 
 	return &user, nil
 }
 
-func (s *MongoStore) Set(key, user *types.User) error {
+func (s *MongoStore) Set(key, user *db.User) error {
 	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
 	defer cancel()
 
